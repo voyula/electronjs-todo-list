@@ -8,7 +8,7 @@ const {
 let mainWindow,
   addWindow
 
-app.on('ready', function() {
+app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600
@@ -19,12 +19,12 @@ app.on('ready', function() {
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
   Menu.setApplicationMenu(mainMenu)
 
-  mainWindow.on('closed', function() {
+  mainWindow.on('closed', () => {
     mainWindow = null
   })
 })
 
-ipcMain.on('item:add', function(e, item) {
+ipcMain.on('item:add', (e, item) => {
   mainWindow.webContents.send('item:add', item)
   addWindow.close()
   addWindow = null
@@ -41,7 +41,7 @@ const mainMenuTemplate = [{
           title: 'Add TODO List Item'
         })
         addWindow.loadFile('windows/add.html')
-        addWindow.on('close', function() {
+        addWindow.on('close', () => {
           addWindow = null
         })
       }
@@ -66,13 +66,13 @@ if (process.platform == 'darwin') {
   mainMenuTemplate.unshift({})
 }
 
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
-app.on('activate', function() {
+app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }

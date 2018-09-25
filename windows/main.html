@@ -8,7 +8,7 @@
   <body>
     <nav class="green">
       <div class="nav-wrapper">
-        <a class="brand-logo center">TODO List</a>   
+        <a class="brand-logo center">TODO List</a>
       </div>
     </nav>
     <div class="container">
@@ -20,16 +20,16 @@
         ipcRenderer
       } = require('electron');
       const ul = document.querySelector('ul');
-      ipcRenderer.on('item:add', function(e, item) {
+      ipcRenderer.on('item:add', (e, item) => {
         const li = document.createElement('li');
         li.className = 'collection-item';
         li.appendChild(document.createTextNode(item));
         ul.appendChild(li);
       });
-      ipcRenderer.on('item:clear', function() {
+      ipcRenderer.on('item:clear', () => {
         ul.innerHTML = '';
       });
-      ul.addEventListener('dblclick', function(e) {
+      ul.addEventListener('dblclick', (e) => {
         e.target.remove();
       });
     </script>

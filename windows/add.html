@@ -22,7 +22,7 @@
       const {
         ipcRenderer
       } = require('electron');
-      document.querySelector('form').addEventListener('submit', function(e) {
+      document.querySelector('form').addEventListener('submit', (e) => {
         ipcRenderer.send('item:add', document.querySelector('#item').value);
         e.preventDefault();
       });
