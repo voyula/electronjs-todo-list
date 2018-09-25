@@ -38,7 +38,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 Licensed under the MIT License. See [License File](LICENSE.md) for more information.
 
-[ico-travis]: https://img.shields.io/travis/voyula/electronjs-todo-list/master.svg?longCache=true&style=flat-square
+[ico-travis]: https://img.shields.io/travis/voyula/websocket-chat/master.svg?longCache=true&style=flat-square
 
 [ico-license]: https://img.shields.io/github/license/voyula/electronjs-todo-list.svg?longCache=true&style=flat-square
 
