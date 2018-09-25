@@ -10,15 +10,14 @@ let mainWindow,
 
 app.on('ready', function() {
   mainWindow = new BrowserWindow({
-    backgroundColor: 'lightgray',
     width: 800,
     height: 600
   })
 
   mainWindow.loadFile('windows/main.html')
 
-  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-  Menu.setApplicationMenu(mainMenu);
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
+  Menu.setApplicationMenu(mainMenu)
 
   mainWindow.on('closed', function() {
     mainWindow = null
@@ -26,9 +25,9 @@ app.on('ready', function() {
 })
 
 ipcMain.on('item:add', function(e, item) {
-  mainWindow.webContents.send('item:add', item);
-  addWindow.close();
-  addWindow = null;
+  mainWindow.webContents.send('item:add', item)
+  addWindow.close()
+  addWindow = null
 });
 
 const mainMenuTemplate = [{
@@ -43,28 +42,28 @@ const mainMenuTemplate = [{
         })
         addWindow.loadFile('windows/add.html')
         addWindow.on('close', function() {
-          addWindow = null;
+          addWindow = null
         })
       }
     },
     {
       label: 'Clear Items',
       click() {
-        mainWindow.webContents.send('item:clear');
+        mainWindow.webContents.send('item:clear')
       }
     },
     {
       label: 'Quit',
       accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
       click() {
-        app.quit();
+        app.quit()
       }
     }
   ]
 }];
 
 if (process.platform == 'darwin') {
-  mainMenuTemplate.unshift({});
+  mainMenuTemplate.unshift({})
 }
 
 app.on('window-all-closed', function() {
