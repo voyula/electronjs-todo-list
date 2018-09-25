@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron.js - TODO List</title>
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+  </head>
+  <body>
+    <nav class="green">
+      <div class="nav-wrapper">
+        <a class="brand-logo center">TODO List</a>   
+      </div>
+    </nav>
+    <ul class="collection"></ul>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script>
+      const {
+        ipcRenderer
+      } = require('electron');
+      const ul = document.querySelector('ul');
+      ipcRenderer.on('item:add', function(e, item) {
+        const li = document.createElement('li');
+        li.className = 'collection-item';
+        li.appendChild(document.createTextNode(item));
+        ul.appendChild(li);
+      });
+      ipcRenderer.on('item:clear', function() {
+        ul.innerHTML = '';
+      });
+      ul.addEventListener('dblclick', function(e) {
+        e.target.remove();
+      });
+    </script>
+  </body>
+</html>

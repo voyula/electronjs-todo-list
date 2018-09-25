@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron.js - TODO List</title>
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+  </head>
+  <body>
+    <div class="container center">
+      <form>
+        <div class="input-field">
+          <input type="text" name="item" id="item" autofocus>
+          <label for="item">Enter Item</label>
+        </div>
+        <button type="submit" class="btn waves-effect waves-light">
+          ADD ITEM
+        </button>
+      </form>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script>
+      const {
+        ipcRenderer
+      } = require('electron');
+      document.querySelector('form').addEventListener('submit', function(e) {
+        ipcRenderer.send('item:add', document.querySelector('#item').value);
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "electronjs-todo-list",
+  "version": "1.0.0",
+  "description": "TODO-List based on Electron.js",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voyula/electronjs-todo-list.git"
+  },
+  "keywords": [
+    "electronjs",
+    "todo",
+    "todo-list"
+  ],
+  "author": "voyula",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/voyula/electronjs-todo-list/issues"
+  },
+  "homepage": "https://github.com/voyula/electronjs-todo-list#readme",
+  "devDependencies": {
+    "electron": "^3.0.0",
+    "jquery": "^3.2.1",
+    "materialize-css": "^1.0.0"
+  }
+}
