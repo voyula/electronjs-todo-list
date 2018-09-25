@@ -18,20 +18,20 @@
     <script>
       const {
         ipcRenderer
-      } = require('electron');
-      const ul = document.querySelector('ul');
+      } = require('electron')
+      const ul = document.querySelector('ul')
       ipcRenderer.on('item:add', (e, item) => {
-        const li = document.createElement('li');
-        li.className = 'collection-item';
-        li.appendChild(document.createTextNode(item));
-        ul.appendChild(li);
-      });
+        const li = document.createElement('li')
+        li.className = 'collection-item'
+        li.appendChild(document.createTextNode(item))
+        ul.appendChild(li)
+      })
       ipcRenderer.on('item:clear', () => {
-        ul.innerHTML = '';
-      });
+        ul.innerHTML = ''
+      })
       ul.addEventListener('dblclick', (e) => {
-        e.target.remove();
-      });
+        e.target.remove()
+      })
     </script>
   </body>
 </html>
