@@ -28,7 +28,7 @@ ipcMain.on('item:add', (e, item) => {
   mainWindow.webContents.send('item:add', item)
   addWindow.close()
   addWindow = null
-});
+})
 
 const mainMenuTemplate = [{
   label: 'Settings',
