@@ -21,11 +21,11 @@
     <script>
       const {
         ipcRenderer
-      } = require('electron');
+      } = require('electron')
       document.querySelector('form').addEventListener('submit', (e) => {
-        ipcRenderer.send('item:add', document.querySelector('#item').value);
-        e.preventDefault();
-      });
+        ipcRenderer.send('item:add', document.querySelector('#item').value)
+        e.preventDefault()
+      })
     </script>
   </body>
 </html>
