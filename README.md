@@ -1,4 +1,4 @@
-# electronjs-todo-list
+# 🤖electronjs-todo-list
 
 [![Build Status][ico-travis]][link-travis]
 [![License][ico-license]][link-license]
@@ -18,7 +18,7 @@ $ npm install
 ## 🐣 Running
 
 ```bash
-npm run start
+$ npm run start
 ```
 
 ### 📜 Standards
