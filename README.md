@@ -3,7 +3,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![License][ico-license]][link-license]
 
-TODO-List based on Electron.js.
+TODO List based on Electron.js.
 
 ## ⚡ Installation
 
