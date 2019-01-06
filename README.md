@@ -7,7 +7,7 @@ TODO List based on Electron.js.
 
 ## ⚡ Installation
 
-Via GIT
+Via [GIT](https://git-scm.com/)
 
 ```bash
 $ git clone https://github.com/voyula/electronjs-todo-list.git
